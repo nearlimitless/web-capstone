@@ -14,8 +14,20 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/myrequests', function () {
+    return Inertia::render('User/MyRequests');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('User/Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/requestform', function () {
+    return Inertia::render('User/RequestForm');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/viewticket', function () {
+    return Inertia::render('User/ViewTicket');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -23,5 +35,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 
 require __DIR__.'/auth.php';
