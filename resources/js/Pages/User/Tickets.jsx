@@ -1,7 +1,7 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 
-export default function TestDashboard() {
+export default function Tickets() {
     return (
         <AuthenticatedLayout
             header={<h2 className="text-xl font-semibold leading-tight text-gray-800">My Requests</h2>}
@@ -48,9 +48,12 @@ export default function TestDashboard() {
                         </div>
 
                         {/* New Request Button */}
-                        <button className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 whitespace-nowrap">
+                        <Link
+                            href={route('requestform')}
+                            className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 whitespace-nowrap"
+                        >
                             + Submit New Request
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Ticket Table */}

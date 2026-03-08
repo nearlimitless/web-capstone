@@ -14,9 +14,9 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/myrequests', function () {
-    return Inertia::render('User/MyRequests');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/tickets', function () {
+    return Inertia::render('User/Tickets');
+})->middleware(['auth', 'verified'])->name('tickets');
 
 Route::get('/dashboard', function () {
     return Inertia::render('User/Dashboard');
@@ -24,11 +24,11 @@ Route::get('/dashboard', function () {
 
 Route::get('/requestform', function () {
     return Inertia::render('User/RequestForm');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('requestform');
 
 Route::get('/viewticket', function () {
     return Inertia::render('User/ViewTicket');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('viewticket');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

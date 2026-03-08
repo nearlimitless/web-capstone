@@ -1,7 +1,7 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head } from '@inertiajs/react';
 
-export default function SubmitRequest() {
+export default function RequestForm() {
     return (
         <AuthenticatedLayout
             header={

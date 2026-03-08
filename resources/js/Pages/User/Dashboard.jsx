@@ -1,5 +1,5 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 
 export default function Dashboard() {
     return (
@@ -10,9 +10,12 @@ export default function Dashboard() {
                     Dashboard
                 </h2>
 
-                <button className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700">
+                <Link
+                    href={route('requestform')}
+                    className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 whitespace-nowrap"
+                >
                     + Submit New Request
-                </button>
+                </Link>
             </div>
         }
         >
