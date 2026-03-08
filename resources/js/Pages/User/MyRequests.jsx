@@ -48,8 +48,8 @@ export default function TestDashboard() {
                         </div>
 
                         {/* New Request Button */}
-                        <button className="bg-blue-600 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-700">
-                            + New Request
+                        <button className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm hover:bg-blue-700 whitespace-nowrap">
+                            + Submit New Request
                         </button>
                     </div>
 
